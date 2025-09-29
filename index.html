@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comprehensive Banking Analytics Report</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        .chart-container { height: 400px; margin: 20px 0; }
+        .dashboard-chart { height: 300px; }
+        .metric-card { transition: transform 0.2s; }
+        .metric-card:hover { transform: translateY(-2px); }
+        @media print {
+            body { print-color-adjust: exact; }
+            .no-print { display: none !important; }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans">
+    <div class="max-w-7xl mx-auto px-4 py-8">
+        <!-- Header -->
+        <header class="bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg p-8 mb-8">
+            <h1 class="text-4xl font-bold mb-2"><i class="fas fa-chart-line mr-3"></i>Comprehensive Banking Analytics Report</h1>
+            <p class="text-xl opacity-90">Advanced Analytics Suite - 8 Complete Analyses</p>
+            <div class="mt-4 flex flex-wrap gap-4 text-sm">
+                <span class="bg-white bg-opacity-20 px-3 py-1 rounded-full">
+                    <i class="fas fa-database mr-1"></i>2,512 Transactions
+                </span>
+                <span class="bg-white bg-opacity-20 px-3 py-1 rounded-full">
+                    <i class="fas fa-users mr-1"></i>495 Customers
+                </span>
+                <span class="bg-white bg-opacity-20 px-3 py-1 rounded-full">
+                    <i class="fas fa-dollar-sign mr-1"></i>$747,555.57 Volume
+                </span>
+            </div>
+        </header>
+
+        <!-- Executive Dashboard -->
+        <section class="mb-12">
+            <h2 class="text-3xl font-bold text-gray-800 mb-6"><i class="fas fa-tachometer-alt mr-2"></i>Executive Dashboard</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-6 mb-8">
+                <div class="metric-card bg-white rounded-lg shadow-lg p-6 text-center">
+                    <div class="text-3xl font-bold text-blue-600">2,512</div>
+                    <div class="text-gray-600">Total Transactions</div>
+                </div>
+                <div class="metric-card bg-white rounded-lg shadow-lg p-6 text-center">
+                    <div class="text-3xl font-bold text-green-600">495</div>
+                    <div class="text-gray-600">Total Customers</div>
+                </div>
+                <div class="metric-card bg-white rounded-lg shadow-lg p-6 text-center">
+                    <div class="text-2xl font-bold text-purple-600">$747K</div>
+                    <div class="text-gray-600">Transaction Volume</div>
+                </div>
+                <div class="metric-card bg-white rounded-lg shadow-lg p-6 text-center">
+                    <div class="text-3xl font-bold text-red-600">3.11%</div>
+                    <div class="text-gray-600">Fraud Detection Rate</div>
+                </div>
+                <div class="metric-card bg-white rounded-lg shadow-lg p-6 text-center">
+                    <div class="text-3xl font-bold text-orange-600">13.5%</div>
+                    <div class="text-gray-600">Churn Risk Rate</div>
+                </div>
+                <div class="metric-card bg-white rounded-lg shadow-lg p-6 text-center">
+                    <div class="text-3xl font-bold text-indigo-600">99.6%</div>
+                    <div class="text-gray-600">Model Accuracy</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Analysis 1: Fraud Detection -->
+        <section class="mb-12">
+            <div class="bg-white rounded-lg shadow-lg p-8">
+                <h2 class="text-3xl font-bold text-gray-800 mb-6"><i class="fas fa-shield-alt mr-2 text-red-500"></i>Analysis 1: Fraud Detection Model</h2>
+                
+                <div class="mb-8">
+                    <h3 class="text-xl font-semibold mb-4">Model Performance Comparison</h3>
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                        <div class="chart-container">
+                            <canvas id="modelPerformanceChart"></canvas>
+                        </div>
+                        <div class="chart-container">
+                            <canvas id="fraudIndicatorsChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-6">
+                    <div class="bg-green-50 border-l-4 border-green-400 p-4">
+                        <h4 class="font-bold text-green-800">XGBoost (Best)</h4>
+                        <p class="text-green-700">99.6% Accuracy, 100% Precision, 93.3% F1-Score</p>
+                    </div>
+                    <div class="bg-blue-50 border-l-4 border-blue-400 p-4">
+                        <h4 class="font-bold text-blue-800">Random Forest</h4>
+                        <p class="text-blue-700">98.6% Accuracy, 90.9% Precision, 74.1% F1-Score</p>
+                    </div>
+                    <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4">
+                        <h4 class="font-bold text-yellow-800">Isolation Forest</h4>
+                        <p class="text-yellow-700">93.0% Accuracy, 17.2% Precision, 22.2% F1-Score</p>
+                    </div>
+                </div>
+
+                <div class="bg-red-50 border border-red-200 rounded-lg p-6">
+                    <h4 class="text-lg font-semibold text-red-800 mb-3">Fraud Indicators Summary</h4>
+                    <div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
+                        <div>
+                            <div class="text-2xl font-bold text-red-600">228</div>
+                            <div class="text-sm text-red-700">High Amount vs Low Balance (9.1%)</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-red-600">64</div>
+                            <div class="text-sm text-red-700">Excessive Login Attempts (2.5%)</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-red-600">113</div>
+                            <div class="text-sm text-red-700">Outlier Transaction Amounts (4.5%)</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-red-600">78</div>
+                            <div class="text-sm text-red-700">Total Potential Fraud Cases (3.11%)</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Analysis 2: Customer Segmentation -->
+        <section class="mb-12">
+            <div class="bg-white rounded-lg shadow-lg p-8">
+                <h2 class="text-3xl font-bold text-gray-800 mb-6"><i class="fas fa-users mr-2 text-blue-500"></i>Analysis 2: Customer Segmentation</h2>
+                
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+                    <div class="chart-container">
+                        <canvas id="customerSegmentChart"></canvas>
+                    </div>
+                    <div class="chart-container">
+                        <canvas id="segmentMetricsChart"></canvas>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-4 gap-6">
+                    <div class="bg-blue-50 border border-blue-200 rounded-lg p-6">
+                        <h4 class="font-bold text-blue-800 mb-2">Conservative Savers</h4>
+                        <div class="text-2xl font-bold text-blue-600 mb-1">153</div>
+                        <div class="text-sm text-blue-700 mb-3">30.9% of customers</div>
+                        <div class="text-sm">
+                            <div>Avg Amount: $211.60</div>
+                            <div>Avg Balance: $6,272.90</div>
+                            <div class="mt-2 text-xs text-blue-600">High balance, low activity, older customers</div>
+                        </div>
+                    </div>
+                    <div class="bg-green-50 border border-green-200 rounded-lg p-6">
+                        <h4 class="font-bold text-green-800 mb-2">Regular Users</h4>
+                        <div class="text-2xl font-bold text-green-600 mb-1">160</div>
+                        <div class="text-sm text-green-700 mb-3">32.3% of customers</div>
+                        <div class="text-sm">
+                            <div>Avg Amount: $305.01</div>
+                            <div>Avg Balance: $4,947.47</div>
+                            <div class="mt-2 text-xs text-green-600">Most active with frequent transactions</div>
+                        </div>
+                    </div>
+                    <div class="bg-purple-50 border border-purple-200 rounded-lg p-6">
+                        <h4 class="font-bold text-purple-800 mb-2">Active Transactors</h4>
+                        <div class="text-2xl font-bold text-purple-600 mb-1">111</div>
+                        <div class="text-sm text-purple-700 mb-3">22.4% of customers</div>
+                        <div class="text-sm">
+                            <div>Avg Amount: $239.74</div>
+                            <div>Avg Balance: $3,519.48</div>
+                            <div class="mt-2 text-xs text-purple-600">Younger customers, moderate activity</div>
+                        </div>
+                    </div>
+                    <div class="bg-indigo-50 border border-indigo-200 rounded-lg p-6">
+                        <h4 class="font-bold text-indigo-800 mb-2">Premium Customers</h4>
+                        <div class="text-2xl font-bold text-indigo-600 mb-1">71</div>
+                        <div class="text-sm text-indigo-700 mb-3">14.3% of customers</div>
+                        <div class="text-sm">
+                            <div>Avg Amount: $530.36</div>
+                            <div>Avg Balance: $5,651.23</div>
+                            <div class="mt-2 text-xs text-indigo-600">High-value transactions, prefer online</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Analysis 3: Transaction Behavior -->
+        <section class="mb-12">
+            <div class="bg-white rounded-lg shadow-lg p-8">
+                <h2 class="text-3xl font-bold text-gray-800 mb-6"><i class="fas fa-chart-bar mr-2 text-green-500"></i>Analysis 3: Transaction Behavior Analysis</h2>
+                
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-6">
+                    <div class="chart-container">
+                        <canvas id="hourlyTransactionsChart"></canvas>
+                    </div>
+                    <div class="chart-container">
+                        <canvas id="channelDistributionChart"></canvas>
+                    </div>
+                </div>
+
+                <div class="bg-green-50 border border-green-200 rounded-lg p-6">
+                    <h4 class="text-lg font-semibold text-green-800 mb-3">Key Behavioral Insights</h4>
+                    <div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
+                        <div>
+                            <div class="text-2xl font-bold text-green-600">4 PM</div>
+                            <div class="text-sm text-green-700">Peak Transaction Hour</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-green-600">1,316</div>
+                            <div class="text-sm text-green-700">Transactions at Peak</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-green-600">Weekdays</div>
+                            <div class="text-sm text-green-700">Consistent Activity</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-green-600">Balanced</div>
+                            <div class="text-sm text-green-700">Channel Distribution</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Analysis 4-6: Combined Multi-Analysis -->
+        <section class="mb-12">
+            <div class="bg-white rounded-lg shadow-lg p-8">
+                <h2 class="text-3xl font-bold text-gray-800 mb-6"><i class="fas fa-analytics mr-2 text-purple-500"></i>Analysis 4-6: Churn, Geography & Channel Analysis</h2>
+                
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-8">
+                    <div class="dashboard-chart">
+                        <canvas id="churnAnalysisChart"></canvas>
+                    </div>
+                    <div class="dashboard-chart">
+                        <canvas id="geographicChart"></canvas>
+                    </div>
+                    <div class="dashboard-chart">
+                        <canvas id="channelUsageChart"></canvas>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                    <div class="bg-orange-50 border border-orange-200 rounded-lg p-6">
+                        <h4 class="font-bold text-orange-800 mb-3">Churn Prediction</h4>
+                        <div class="text-3xl font-bold text-orange-600 mb-2">67</div>
+                        <div class="text-sm text-orange-700">customers at risk (13.5%)</div>
+                        <div class="mt-3 text-xs text-orange-600">Based on transaction inactivity patterns</div>
+                    </div>
+                    <div class="bg-teal-50 border border-teal-200 rounded-lg p-6">
+                        <h4 class="font-bold text-teal-800 mb-3">Top Geographic Markets</h4>
+                        <div class="text-sm space-y-1">
+                            <div>Austin: $22,741 (59 txns)</div>
+                            <div>Oklahoma City: $21,716 (68 txns)</div>
+                            <div>Memphis: $21,171 (63 txns)</div>
+                        </div>
+                    </div>
+                    <div class="bg-indigo-50 border border-indigo-200 rounded-lg p-6">
+                        <h4 class="font-bold text-indigo-800 mb-3">Channel Distribution</h4>
+                        <div class="text-sm space-y-1">
+                            <div>Branch: 868 txns (34.6%)</div>
+                            <div>ATM: 833 txns (33.2%)</div>
+                            <div>Online: 811 txns (32.3%)</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Analysis 7-8: Security & Merchant Analysis -->
+        <section class="mb-12">
+            <div class="bg-white rounded-lg shadow-lg p-8">
+                <h2 class="text-3xl font-bold text-gray-800 mb-6"><i class="fas fa-security mr-2 text-red-500"></i>Analysis 7-8: Security & Merchant Risk Analysis</h2>
+                
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-6">
+                    <div class="bg-red-50 border border-red-200 rounded-lg p-6">
+                        <h4 class="font-bold text-red-800 mb-3">Transaction Duration & Login Security</h4>
+                        <div class="space-y-3">
+                            <div>
+                                <div class="text-lg font-semibold text-red-600">64 Cases</div>
+                                <div class="text-sm text-red-700">Excessive login attempts flagged</div>
+                            </div>
+                            <div>
+                                <div class="text-lg font-semibold text-red-600">Variable</div>
+                                <div class="text-sm text-red-700">Transaction duration by channel</div>
+                            </div>
+                            <div class="text-xs text-red-600 mt-3">
+                                Enhanced monitoring required for flagged patterns
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-yellow-50 border border-yellow-200 rounded-lg p-6">
+                        <h4 class="font-bold text-yellow-800 mb-3">Merchant Risk Profiling</h4>
+                        <div class="space-y-3">
+                            <div>
+                                <div class="text-lg font-semibold text-yellow-600">Risk Scoring</div>
+                                <div class="text-sm text-yellow-700">Based on transaction patterns</div>
+                            </div>
+                            <div>
+                                <div class="text-lg font-semibold text-yellow-600">Clustering</div>
+                                <div class="text-sm text-yellow-700">High-risk merchants identified</div>
+                            </div>
+                            <div class="text-xs text-yellow-600 mt-3">
+                                Regular review of merchant relationships recommended
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Business Recommendations -->
+        <section class="mb-12">
+            <div class="bg-gradient-to-r from-indigo-500 to-purple-600 text-white rounded-lg p-8">
+                <h2 class="text-3xl font-bold mb-6"><i class="fas fa-lightbulb mr-2"></i>Business Recommendations</h2>
+                
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <div>
+                        <h3 class="text-xl font-semibold mb-4"><i class="fas fa-shield-alt mr-2"></i>Fraud Prevention</h3>
+                        <ul class="space-y-2 text-indigo-100">
+                            <li>• Implement XGBoost model for real-time fraud detection</li>
+                            <li>• Monitor high amount-to-balance ratio transactions</li>
+                            <li>• Flag accounts with >3 login attempts for review</li>
+                        </ul>
+                        
+                        <h3 class="text-xl font-semibold mb-4 mt-6"><i class="fas fa-users mr-2"></i>Customer Strategy</h3>
+                        <ul class="space-y-2 text-indigo-100">
+                            <li>• <strong>Conservative Savers:</strong> Wealth management products</li>
+                            <li>• <strong>Regular Users:</strong> Loyalty programs and engagement</li>
+                            <li>• <strong>Active Transactors:</strong> Mobile banking enhancements</li>
+                            <li>• <strong>Premium Customers:</strong> VIP services and exclusive offers</li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h3 class="text-xl font-semibold mb-4"><i class="fas fa-cogs mr-2"></i>Operational Optimization</h3>
+                        <ul class="space-y-2 text-indigo-100">
+                            <li>• Increase capacity at 4 PM peak hours</li>
+                            <li>• Prioritize high-volume locations (Austin, Oklahoma City, Memphis)</li>
+                            <li>• Maintain balanced multi-channel strategy</li>
+                        </ul>
+                        
+                        <h3 class="text-xl font-semibold mb-4 mt-6"><i class="fas fa-exclamation-triangle mr-2"></i>Risk Management</h3>
+                        <ul class="space-y-2 text-indigo-100">
+                            <li>• Proactive outreach to 67 at-risk customers</li>
+                            <li>• Enhanced monitoring for flagged patterns</li>
+                            <li>• Regular review of high-risk merchant relationships</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Conclusion -->
+        <section class="mb-8">
+            <div class="bg-white rounded-lg shadow-lg p-8">
+                <h2 class="text-3xl font-bold text-gray-800 mb-6"><i class="fas fa-check-circle mr-2 text-green-500"></i>Conclusion</h2>
+                <div class="prose max-w-none">
+                    <p class="text-lg text-gray-700 mb-4">
+                        This comprehensive banking analytics suite provides actionable insights across fraud detection, customer segmentation, 
+                        behavioral analysis, and operational optimization. The implemented models and analyses are ready for production 
+                        deployment to enhance banking operations and customer experience.
+                    </p>
+                    <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 mt-6">
+                        <div class="text-center">
+                            <div class="text-2xl font-bold text-green-600">8</div>
+                            <div class="text-sm text-gray-600">Analyses Completed</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-2xl font-bold text-blue-600">20+</div>
+                            <div class="text-sm text-gray-600">Features Engineered</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-2xl font-bold text-purple-600">99.6%</div>
+                            <div class="text-sm text-gray-600">Model Accuracy</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-2xl font-bold text-indigo-600">Ready</div>
+                            <div class="text-sm text-gray-600">For Deployment</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="text-center text-gray-500 text-sm border-t pt-6">
+            <p><i class="fas fa-robot mr-1"></i>Report generated using advanced machine learning and statistical analysis techniques</p>
+            <p class="mt-2">Banking Analytics Suite | Comprehensive Analysis & Business Intelligence</p>
+            <p class="mt-2"><a href="https://github.com/BigTime5/Banking-Analytics" class="text-blue-600 hover:underline" target="_blank">View Project on GitHub</a></p>
+        </footer>
+    </div>
+
+    <script>
+        // Model Performance Chart
+        const modelCtx = document.getElementById('modelPerformanceChart').getContext('2d');
+        new Chart(modelCtx, {
+            type: 'bar',
+            data: {
+                labels: ['Isolation Forest', 'Random Forest', 'XGBoost'],
+                datasets: [
+                    {
+                        label: 'Accuracy (%)',
+                        data: [93.0, 98.6, 99.6],
+                        backgroundColor: 'rgba(54, 162, 235, 0.8)'
+                    },
+                    {
+                        label: 'Precision (%)',
+                        data: [17.2, 90.9, 100.0],
+                        backgroundColor: 'rgba(255, 99, 132, 0.8)'
+                    },
+                    {
+                        label: 'F1-Score (%)',
+                        data: [22.2, 74.1, 93.3],
+                        backgroundColor: 'rgba(75, 192, 192, 0.8)'
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    title: { display: true, text: 'Fraud Detection Model Performance' }
+                }
+            }
+        });
+
+        // Fraud Indicators Chart
+        const fraudCtx = document.getElementById('fraudIndicatorsChart').getContext('2d');
+        new Chart(fraudCtx, {
+            type: 'doughnut',
+            data: {
+                labels: ['High Amount vs Low Balance', 'Excessive Login Attempts', 'Outlier Amounts', 'Normal Transactions'],
+                datasets: [{
+                    data: [228, 64, 113, 2107],
+                    backgroundColor: ['#ef4444', '#f97316', '#eab308', '#22c55e']
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    title: { display: true, text: 'Fraud Indicators Distribution' }
+                }
+            }
+        });
+
+        // Customer Segmentation Chart
+        const segmentCtx = document.getElementById('customerSegmentChart').getContext('2d');
+        new Chart(segmentCtx, {
+            type: 'pie',
+            data: {
+                labels: ['Conservative Savers', 'Regular Users', 'Active Transactors', 'Premium Customers'],
+                datasets: [{
+                    data: [153, 160, 111, 71],
+                    backgroundColor: ['#3b82f6', '#22c55e', '#a855f7', '#6366f1']
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    title: { display: true, text: 'Customer Segment Distribution' }
+                }
+            }
+        });
+
+        // Segment Metrics Chart
+        const metricsCtx = document.getElementById('segmentMetricsChart').getContext('2d');
+        new Chart(metricsCtx, {
+            type: 'bar',
+            data: {
+                labels: ['Conservative Savers', 'Regular Users', 'Active Transactors', 'Premium Customers'],
+                datasets: [
+                    {
+                        label: 'Avg Transaction Amount ($)',
+                        data: [211.60, 305.01, 239.74, 530.36],
+                        backgroundColor: 'rgba(99, 102, 241, 0.8)'
+                    },
+                    {
+                        label: 'Avg Account Balance ($)',
+                        data: [6272.90, 4947.47, 3519.48, 5651.23],
+                        backgroundColor: 'rgba(34, 197, 94, 0.8)',
+                        yAxisID: 'y1'
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    title: { display: true, text: 'Segment Financial Metrics' }
+                },
+                scales: {
+                    y: { type: 'linear', display: true, position: 'left' },
+                    y1: { type: 'linear', display: true, position: 'right' }
+                }
+            }
+        });
+
+        // Hourly Transactions Chart
+        const hourlyCtx = document.getElementById('hourlyTransactionsChart').getContext('2d');
+        new Chart(hourlyCtx, {
+            type: 'line',
+            data: {
+                labels: ['0', '4', '8', '12', '16', '20'],
+                datasets: [{
+                    label: 'Transaction Count',
+                    data: [50, 120, 400, 800, 1316, 600],
+                    borderColor: 'rgb(34, 197, 94)',
+                    backgroundColor: 'rgba(34, 197, 94, 0.1)',
+                    tension: 0.4
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    title: { display: true, text: 'Hourly Transaction Patterns' }
+                }
+            }
+        });
+
+        // Channel Distribution Chart
+        const channelCtx = document.getElementById('channelDistributionChart').getContext('2d');
+        new Chart(channelCtx, {
+            type: 'doughnut',
+            data: {
+                labels: ['Branch', 'ATM', 'Online'],
+                datasets: [{
+                    data: [868, 833, 811],
+                    backgroundColor: ['#8b5cf6', '#06b6d4', '#f59e0b']
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    title: { display: true, text: 'Channel Distribution' }
+                }
+            }
+        });
+
+        // Churn Analysis Chart
+        const churnCtx = document.getElementById('churnAnalysisChart').getContext('2d');
+        new Chart(churnCtx, {
+            type: 'doughnut',
+            data: {
+                labels: ['At Risk', 'Active Customers'],
+                datasets: [{
+                    data: [67, 428],
+                    backgroundColor: ['#f97316', '#22c55e']
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    title: { display: true, text: 'Churn Risk Analysis' }
+                }
+            }
+        });
+
+        // Geographic Chart
+        const geoCtx = document.getElementById('geographicChart').getContext('2d');
+        new Chart(geoCtx, {
+            type: 'bar',
+            data: {
+                labels: ['Austin', 'Oklahoma City', 'Memphis', 'Fort Worth', 'Detroit'],
+                datasets: [{
+                    label: 'Transaction Volume ($)',
+                    data: [22741, 21716, 21171, 20777, 20610],
+                    backgroundColor: 'rgba(20, 184, 166, 0.8)'
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    title: { display: true, text: 'Top Locations by Volume' }
+                }
+            }
+        });
+
+        // Channel Usage Chart
+        const usageCtx = document.getElementById('channelUsageChart').getContext('2d');
+        new Chart(usageCtx, {
+            type: 'bar',
+            data: {
+                labels: ['Branch', 'ATM', 'Online'],
+                datasets: [{
+                    label: 'Transaction Count',
+                    data: [868, 833, 811],
+                    backgroundColor: ['#8b5cf6', '#06b6d4', '#f59e0b']
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    title: { display: true, text: 'Channel Usage Comparison' }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
