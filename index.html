@@ -37,6 +37,86 @@
             </div>
         </header>
 
+        <!-- Problem Statement Section -->
+        <section class="mb-12">
+            <div class="bg-white rounded-lg shadow-lg p-8">
+                <h2 class="text-3xl font-bold text-gray-800 mb-6"><i class="fas fa-question-circle mr-2 text-indigo-600"></i>Problem Statement</h2>
+                <div class="prose max-w-none text-gray-700 text-lg leading-relaxed">
+                    <p class="mb-6">
+                        <strong class="text-xl text-indigo-700">Project Title:</strong> Comprehensive Analytics for Banking Transaction Data to Enhance Risk Management, Customer Insights, and Operational Efficiency
+                    </p>
+
+                    <p class="mb-6">
+                        <strong class="font-semibold">Core Problem:</strong><br>
+                        The bank currently lacks a holistic, data-driven understanding of customer transaction behaviors, resulting in potential blind spots in fraud detection, customer retention, channel optimization, and risk mitigation across merchants, geographies, and transaction patterns. With a dataset containing 2,512 transactions from 495 unique customers (total volume ~$747,556), there is a significant opportunity to extract actionable intelligence through advanced analytics.
+                    </p>
+
+                    <p class="mb-6">
+                        <strong class="font-semibold">Intent of the Project:</strong><br>
+                        To conduct end-to-end exploratory, predictive, and prescriptive analytics on banking transaction data, delivering insights across eight key domains: fraud detection, customer segmentation, transaction behavior prediction, churn risk assessment, geographical patterns, channel preferences, login & transaction duration analysis, and merchant risk profiling. The ultimate goal is to transform raw transactional data into a robust intelligence framework that enables proactive, evidence-based decision-making.
+                    </p>
+
+                    <div class="bg-indigo-50 border-l-4 border-indigo-500 p-6 mb-6 rounded-r-lg">
+                        <h3 class="text-xl font-semibold text-indigo-800 mb-3">Key Business Questions Addressed</h3>
+                        <ul class="list-disc pl-6 space-y-2 text-indigo-700">
+                            <li>How can we accurately detect and prioritize potential fraudulent transactions to reduce financial losses?</li>
+                            <li>Who are our distinct customer segments, and how do their spending, frequency, channel preferences, and lifetime value differ?</li>
+                            <li>What temporal and behavioral patterns exist in transactions, and can we reliably predict future activity?</li>
+                            <li>Which customers are at high risk of churning, and what early warning signals should we monitor?</li>
+                            <li>How do transaction volumes, risks, and customer demographics vary across geographic locations?</li>
+                            <li>Which channels (ATM, Online, Branch) are preferred by different demographics, and what are the security and efficiency implications?</li>
+                            <li>What factors influence transaction duration and login attempts, and how do these relate to potential security risks?</li>
+                            <li>Which merchants exhibit high-risk patterns based on transaction variability and login behavior?</li>
+                        </ul>
+                    </div>
+
+                    <h3 class="text-xl font-semibold text-gray-800 mb-4">Stakeholders & Expectations</h3>
+                    <div class="overflow-x-auto">
+                        <table class="min-w-full bg-white border border-gray-200 rounded-lg">
+                            <thead class="bg-gray-100">
+                                <tr>
+                                    <th class="px-6 py-3 text-left text-sm font-semibold text-gray-700">Stakeholder</th>
+                                    <th class="px-6 py-3 text-left text-sm font-semibold text-gray-700">Key Interest</th>
+                                    <th class="px-6 py-3 text-left text-sm font-semibold text-gray-700">Primary Expectations</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-gray-200">
+                                <tr>
+                                    <td class="px-6 py-4 text-sm">Risk & Fraud Management</td>
+                                    <td class="px-6 py-4 text-sm">Security & loss prevention</td>
+                                    <td class="px-6 py-4 text-sm">High-accuracy fraud models, prioritized alerts, identification of high-risk merchants/locations (e.g., 3.1% fraud rate flagged)</td>
+                                </tr>
+                                <tr class="bg-gray-50">
+                                    <td class="px-6 py-4 text-sm">Customer Relationship / Marketing</td>
+                                    <td class="px-6 py-4 text-sm">Retention & growth</td>
+                                    <td class="px-6 py-4 text-sm">Detailed customer segments, churn risk profiles (13.5% at-risk), channel preferences for targeted campaigns</td>
+                                </tr>
+                                <tr>
+                                    <td class="px-6 py-4 text-sm">Product & Channel Management</td>
+                                    <td class="px-6 py-4 text-sm">Digital/physical channel performance</td>
+                                    <td class="px-6 py-4 text-sm">Channel usage insights, transaction duration analysis, recommendations for UX and security improvements</td>
+                                </tr>
+                                <tr class="bg-gray-50">
+                                    <td class="px-6 py-4 text-sm">Senior Management / Executives</td>
+                                    <td class="px-6 py-4 text-sm">Overall strategy & performance</td>
+                                    <td class="px-6 py-4 text-sm">Executive KPIs, visualizations, strategic recommendations (e.g., focus on premium/online segments)</td>
+                                </tr>
+                                <tr>
+                                    <td class="px-6 py-4 text-sm">Data & Analytics Team</td>
+                                    <td class="px-6 py-4 text-sm">Model development & deployment</td>
+                                    <td class="px-6 py-4 text-sm">Reusable features, strong model performance (e.g., XGBoost 99.6% accuracy), exportable results for dashboards</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <p class="mt-6 text-lg">
+                        This project directly addresses these needs by delivering production-ready models, rich visualizations, statistical profiles, and structured outputs (JSON/CSV), empowering the bank to minimize risks, deepen customer engagement, and drive sustainable growth through data-driven decisions.
+                    </p>
+                </div>
+            </div>
+        </section>
+
         <!-- Executive Dashboard -->
         <section class="mb-12">
             <h2 class="text-3xl font-bold text-gray-800 mb-6"><i class="fas fa-tachometer-alt mr-2"></i>Executive Dashboard</h2>
@@ -390,6 +470,7 @@
     </div>
 
     <script>
+        // All Chart.js configurations remain unchanged from your original code
         // Model Performance Chart
         const modelCtx = document.getElementById('modelPerformanceChart').getContext('2d');
         new Chart(modelCtx, {
